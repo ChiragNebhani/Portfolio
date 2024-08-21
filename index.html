@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Chirag Nebhani</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./tailwind.config.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Ovo&display=swap" rel="stylesheet">
+</head>
+
+<body class="overflow-x-hidden font-Outfit leading-8 dark:bg-darkTheme dark:text-white">
+    <div class="fixed top-0 right-0 w-11/12 -z-10 translate-y-[-80%] dark:hidden">
+        <img src="./images/header-bg-color.png" alt="" class="w-full">
+    </div>
+    <nav class="w-full fixed px-5 lg:px-8 xl:px-[8%] py-4 flex items-center justify-between z-50">
+
+        <img class="w-28 cursor-pointer mr-14 dark:hidden" src="./images/logo.png" alt="logo">
+
+        <img class="w-28 cursor-pointer mr-14 hidden dark:block" src="./images/logo-dark.png" alt="logo">
+
+        <ul
+            class="hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3 bg-white shadow-sm bg-opacity-50 font-Ovo dark:border dark:border-white/50 dark:bg-transparent">
+
+            <li><a href="#top">Home</a></li>
+            <li><a href="#about">About me</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#work">My Work</a></li>
+            <li><a href="#contact">Contact me</a></li>
+        </ul>
+
+        <div class="flex items-center gap-4">
+            <button onclick="toggleTheme()">
+                <img src="./images/moon_icon.png" alt="" class="w-6 dark:hidden">
+                <img src="./images/sun_icon.png" alt="" class="w-6 hidden dark:block">
+            </button>
+
+            <a href="#contact"
+                class="hidden lg:flex items-center gap-3 px-10 py-2.5 border border-gray-500 rounded-full ml-4 font-Ovo dark:border-white/50">Contact
+                <img src="./images/arrow-icon.png" alt="" class="w-3 dark:hidden">
+                <img src="./images/arrow-icon-dark.png" alt="" class="w-3 hidden dark:block"></a>
+            <button class="block md:hidden ml-3" onclick="openMenu()">
+                <img src="./images/menu-black.png" alt="" class="w-6 dark:hidden">
+                <img src="./images/menu-white.png" alt="" class="w-6 hidden dark:block">
+            </button>
+        </div>
+
+        <!-- mobile menu -->
+        <ul id="sideMenu"
+            class="flex md:hidden flex-col gap-4 py-20 px-10 fixed -right-64 top-0 bottom-0 w-64 z-50 h-screen bg-rose-50 transition duration-500 font-Ovo dark:bg-darkHover dark:text-white">
+
+            <div class="absolute right-6 top-6" onclick="closeMenu()">
+                <img src="./images/close-black.png" alt="" class="w-5 cursor-pointer dark:hidden">
+                <img src="./images/close-white.png" alt="" class="w-5 cursor-pointer hidden dark:block">
+            </div>
+
+            <li><a href="#top" onclick="closeMenu()">Home</a></li>
+            <li><a href="#about" onclick="closeMenu()">About me</a></li>
+            <li><a href="#skills" onclick="closeMenu()">Skills</a></li>
+            <li><a href="#work" onclick="closeMenu()">My Work</a></li>
+            <li><a href="#contact" onclick="closeMenu()">Contact me</a></li>
+        </ul>
+    </nav>
+
+    <!-- header -->
+    <div class="w-11/12 max-w-3xl text-center mx-auto h-screen flex flex-col items-center justify-center gap-4">
+        <img src="./images/profile-img.jpeg" alt="" class="rounded-full w-32">
+        <h3 class="flex items-end gap-2 text-xl md:text-2xl mb-3 font-Ovo">Hi! I'm Chirag Nebhani <img
+                src="./images/hand-icon.png" alt="" class="w-6"></h3>
+        <h1 class="text-3xl sm:text-6xl lg:text-[66px] font-Ovo">web developer.</h1>
+        <p class="max-w-2xl mx-auto font-Ovo">Explore my portfolio and let's collaborate to elevate your online presence
+            with custom web development that is both beautiful and functional.</p>
+
+        <div class="flex flex-col sm:flex-row items-center gap-4 mt-4">
+            <a href="#contact"
+                class="px-10 py-3 border rounded-full bg-gradient-to-r from-[#b820e6] to-[#da7d20] text-white flex items-center gap-2 dark:border-transparent">contact
+                me <img src="./images/right-arrow-white.png" alt="" class="w-4"></a>
+
+            <a href="/resume.pdf" download
+                class="px-10 py-3 border rounded-full border-gray-500  flex items-center gap-2 bg-white dark:text-black">my
+                resume <img src="./images/download-icon.png" alt="" class="w-4"></a>
+        </div>
+    </div>
+
+    <!-- about me -->
+    <div id="about" class="w-full px-[12%] py-10 scroll-mt-20">
+        <h4 class="text-center mb-2 text-lg font-Ovo">Introduction</h4>
+        <h2 class="text-center text-5xl font-Ovo">About me</h2>
+        <div class="flex w-full flex-col lg:flex-row items-center gap-20 my-20">
+            <div class="max-w-max mx-auto relative">
+                <img src="./images/user-img.jpg" alt="" class="w-64 sm:w-80 rounded-3xl max-w-none">
+                <div
+                    class="bg-white w-1/2 aspect-square absolute right-0 bottom-0 rounded-full translate-x-1/4 translate-y-1/3 shadow-[0_4px_55px_rgba(149,0,162,0.15)] flex items-center justify-center">
+                    <img src="./images/circular-text.png" alt="" class="w-full animate-spin_slow">
+                    <img src="./images/dev-icon.png" alt=""
+                        class="w-1/4 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                </div>
+            </div>
+            <div class="flex-1">
+                <p class="mb-10 max-w-2xl font-Ovo">Hello! I'm Chirag Nebhani, a passionate and dedicated Full Stack Web
+                    Developer with a solid foundation in computer science and a knack for solving complex problems.
+                    Currently, I'm in my final year of a BTech program. I am a zealous individual who strives to help
+                    others by leveraging my skills. I have been actively learning various tools and technologies in my
+                    field and continuously upgrading myself to stay current.</p>
+
+                <ul class="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-2xl">
+                    <li
+                        class="border-[0.5px] border-gray-400 rounded-xl p-6 cursor-pointer hover:bg-lightHover hover:-translate-y-1 duration-500 hover:shadow-black dark:border-white dark:hover:shadow-white dark:hover:bg-darkHover/50">
+                        <img src="./images/code-icon.png" alt="" class="w-7 mt-3 dark:hidden">
+                        <img src="./images/code-icon-dark.png" alt="" class="w-7 mt-3 hidden dark:block">
+                        <h3 class="my-4 font-semibold text-gray-700 dark:text-white">Languages</h3>
+                        <p class="text-gray-600 text-sm dark:text-white/80">HTML, CSS, Javascript, React Js, Next Js</p>
+                    </li>
+                    <li
+                        class="border-[0.5px] border-gray-400 rounded-xl p-6 cursor-pointer hover:bg-lightHover hover:-translate-y-1 duration-500 hover:shadow-black dark:border-white dark:hover:shadow-white dark:hover:bg-darkHover/50">
+                        <img src="./images/edu-icon.png" alt="" class="w-7 mt-3 dark:hidden">
+                        <img src="./images/edu-icon-dark.png" alt="" class="w-7 mt-3 hidden dark:block">
+                        <h3 class="my-4 font-semibold text-gray-700 dark:text-white">Education</h3>
+                        <p class="text-gray-600 text-sm dark:text-white/80">BTech in Information Technology</p>
+                    </li>
+                    <li
+                        class="border-[0.5px] border-gray-400 rounded-xl p-6 cursor-pointer hover:bg-lightHover hover:-translate-y-1 duration-500 hover:shadow-black dark:border-white dark:hover:shadow-white dark:hover:bg-darkHover/50">
+                        <img src="./images/project-icon.png" alt="" class="w-7 mt-3 dark:hidden">
+                        <img src="./images/project-icon-dark.png" alt="" class="w-7 mt-3 hidden dark:block">
+                        <h3 class="my-4 font-semibold text-gray-700 dark:text-white">Projects</h3>
+                        <p class="text-gray-600 text-sm dark:text-white/80">Built more than 5 projects</p>
+                    </li>
+                </ul>
+                <h4 class="my-6 text-gray-700 font-Ovo dark:text-white/80">Tools i use</h4>
+                <ul class="flex items-center gap-3 sm:gap-5">
+                    <li
+                        class="flex items-center justify-center w-12 sm:w-14 aspect-square border border-gray-400 rounded-lg cursor-pointer hover:-translate-y-1 duration-500">
+                        <img src="./images/vscode.png" alt="" class="w-5 sm:w-7">
+                    </li>
+                    <li
+                        class="flex items-center justify-center w-12 sm:w-14 aspect-square border border-gray-400 rounded-lg cursor-pointer hover:-translate-y-1 duration-500">
+                        <img src="./images/firebase.png" alt="" class="w-5 sm:w-7">
+                    </li>
+                    <li
+                        class="flex items-center justify-center w-12 sm:w-14 aspect-square border border-gray-400 rounded-lg cursor-pointer hover:-translate-y-1 duration-500">
+                        <img src="./images/mongodb.png" alt="" class="w-5 sm:w-7">
+                    </li>
+                    <li
+                        class="flex items-center justify-center w-12 sm:w-14 aspect-square border border-gray-400 rounded-lg cursor-pointer hover:-translate-y-1 duration-500">
+                        <img src="./images/figma.png" alt="" class="w-5 sm:w-7">
+                    </li>
+                    <li
+                        class="flex items-center justify-center w-12 sm:w-14 aspect-square border border-gray-400 rounded-lg cursor-pointer hover:-translate-y-1 duration-500">
+                        <img src="./images/git.png" alt="" class="w-5 sm:w-7">
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- skills -->
+    <div id="skills" class="w-full px-[12%] py-10 scroll-mt-20 bg-themeBackground dark:bg-darkThemeBackground">
+        <h4 class="text-center mb-2 text-lg font-Ovo text-themeText dark:text-darkThemeText">Skills</h4>
+        <h2 class="text-center text-5xl font-Ovo text-themeHeading dark:text-darkThemeHeading">My Skills</h2>
+        <p class="text-center max-w-2xl mx-auto mt-5 mb-12 font-Ovo text-themeText dark:text-darkThemeText">
+            Here are some of the skills I've acquired and honed over time.
+        </p>
+
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8">
+            <!-- Skill 1 -->
+            <div class="flex flex-col justify-center items-center transition-transform transform hover:scale-110">
+                <img src="./images/html-icon.png" alt="HTML" class="w-12 h-12 md:w-16 md:h-16">
+                <span
+                    class="mt-2 text-xs sm:text-sm md:text-base font-Ovo text-themeText dark:text-darkThemeText">HTML</span>
+            </div>
+            <!-- Skill 2 -->
+            <div class="flex flex-col justify-center items-center transition-transform transform hover:scale-110">
+                <img src="./images/css-icon.png" alt="CSS" class="w-12 h-12 md:w-16 md:h-16">
+                <span
+                    class="mt-2 text-xs sm:text-sm md:text-base font-Ovo text-themeText dark:text-darkThemeText">CSS</span>
+            </div>
+            <!-- Skill 3 -->
+            <div class="flex flex-col justify-center items-center transition-transform transform hover:scale-110">
+                <img src="./images/js-icon.png" alt="JavaScript" class="w-12 h-12 md:w-16 md:h-16">
+                <span
+                    class="mt-2 text-xs sm:text-sm md:text-base font-Ovo text-themeText dark:text-darkThemeText">JavaScript</span>
+            </div>
+            <!-- Skill 4 -->
+            <div class="flex flex-col justify-center items-center transition-transform transform hover:scale-110">
+                <img src="./images/react-icon.png" alt="React" class="w-12 h-12 md:w-16 md:h-16">
+                <span
+                    class="mt-2 text-xs sm:text-sm md:text-base font-Ovo text-themeText dark:text-darkThemeText">React</span>
+            </div>
+            <!-- Skill 5 -->
+            <div class="flex flex-col justify-center items-center transition-transform transform hover:scale-110">
+                <img src="./images/nextjs-icon.png" alt="Next.js" class="w-12 h-12 md:w-16 md:h-16">
+                <span
+                    class="mt-2 text-xs sm:text-sm md:text-base font-Ovo text-themeText dark:text-darkThemeText">Next.js</span>
+            </div>
+            <!-- Skill 6 -->
+            <div class="flex flex-col justify-center items-center transition-transform transform hover:scale-110">
+                <img src="./images/redux-icon.png" alt="Redux" class="w-12 h-12 md:w-16 md:h-16">
+                <span
+                    class="mt-2 text-xs sm:text-sm md:text-base font-Ovo text-themeText dark:text-darkThemeText">Redux</span>
+            </div>
+            <!-- Skill 7 -->
+            <div class="flex flex-col justify-center items-center transition-transform transform hover:scale-110">
+                <img src="./images/nodejs-icon.png" alt="Node.js" class="w-12 h-12 md:w-16 md:h-16">
+                <span
+                    class="mt-2 text-xs sm:text-sm md:text-base font-Ovo text-themeText dark:text-darkThemeText">Node.js</span>
+            </div>
+            <!-- Skill 8 -->
+            <div class="flex flex-col justify-center items-center transition-transform transform hover:scale-110">
+                <img src="./images/express-icon.png" alt="Express" class="w-12 h-12 md:w-16 md:h-16">
+                <span
+                    class="mt-2 text-xs sm:text-sm md:text-base font-Ovo text-themeText dark:text-darkThemeText">Express</span>
+            </div>
+            <!-- Skill 9 -->
+            <div class="flex flex-col justify-center items-center transition-transform transform hover:scale-110">
+                <img src="./images/npm-icon.png" alt="NPM" class="w-12 h-12 md:w-16 md:h-16">
+                <span
+                    class="mt-2 text-xs sm:text-sm md:text-base font-Ovo text-themeText dark:text-darkThemeText">NPM</span>
+            </div>
+            <!-- Skill 10 -->
+            <div class="flex flex-col justify-center items-center transition-transform transform hover:scale-110">
+                <img src="./images/bootstrap-icon.png" alt="Bootstrap" class="w-12 h-12 md:w-16 md:h-16">
+                <span
+                    class="mt-2 text-xs sm:text-sm md:text-base font-Ovo text-themeText dark:text-darkThemeText">Bootstrap</span>
+            </div>
+            <!-- Skill 11 -->
+            <div class="flex flex-col justify-center items-center transition-transform transform hover:scale-110">
+                <img src="./images/git-icon.png" alt="Git" class="w-12 h-12 md:w-16 md:h-16">
+                <span
+                    class="mt-2 text-xs sm:text-sm md:text-base font-Ovo text-themeText dark:text-darkThemeText">Git</span>
+            </div>
+            <!-- Skill 12 -->
+            <div class="flex flex-col justify-center items-center transition-transform transform hover:scale-110">
+                <img src="./images/c-icon.png" alt="C" class="w-12 h-12 md:w-16 md:h-16">
+                <span
+                    class="mt-2 text-xs sm:text-sm md:text-base font-Ovo text-themeText dark:text-darkThemeText">C</span>
+            </div>
+            <!-- Skill 13 -->
+            <div class="flex flex-col justify-center items-center transition-transform transform hover:scale-110">
+                <img src="./images/cplusplus-icon.png" alt="C++" class="w-12 h-12 md:w-16 md:h-16">
+                <span
+                    class="mt-2 text-xs sm:text-sm md:text-base font-Ovo text-themeText dark:text-darkThemeText">C++</span>
+            </div>
+            <!-- Skill 14 -->
+            <div class="flex flex-col justify-center items-center transition-transform transform hover:scale-110">
+                <img src="./images/typescript-icon.png" alt="TypeScript" class="w-12 h-12 md:w-16 md:h-16">
+                <span
+                    class="mt-2 text-xs sm:text-sm md:text-base font-Ovo text-themeText dark:text-darkThemeText">TypeScript</span>
+            </div>
+            <!-- Skill 15 -->
+            <div class="flex flex-col justify-center items-center transition-transform transform hover:scale-110">
+                <img src="./images/tailwind-icon.png" alt="Tailwind CSS" class="w-12 h-12 md:w-16 md:h-16">
+                <span
+                    class="mt-2 text-xs sm:text-sm md:text-base font-Ovo text-themeText dark:text-darkThemeText">Tailwind
+                    CSS</span>
+            </div>
+            <!-- Skill 16 -->
+            <div class="flex flex-col justify-center items-center transition-transform transform hover:scale-110">
+                <img src="./images/mongodb-icon.png" alt="MongoDB" class="w-12 h-12 md:w-16 md:h-16">
+                <span
+                    class="mt-2 text-xs sm:text-sm md:text-base font-Ovo text-themeText dark:text-darkThemeText">MongoDB</span>
+            </div>
+            <!-- Skill 17 -->
+            <div class="flex flex-col justify-center items-center transition-transform transform hover:scale-110">
+                <img src="./images/mysql-icon.png" alt="MySQL" class="w-12 h-12 md:w-16 md:h-16">
+                <span
+                    class="mt-2 text-xs sm:text-sm md:text-base font-Ovo text-themeText dark:text-darkThemeText">MySQL</span>
+            </div>
+            <!-- Skill 18 -->
+            <div class="flex flex-col justify-center items-center transition-transform transform hover:scale-110">
+                <img src="./images/firebase.png" alt="MySQL" class="w-12 h-12 md:w-16 md:h-16">
+                <span
+                    class="mt-2 text-xs sm:text-sm md:text-base font-Ovo text-themeText dark:text-darkThemeText">Firebase</span>
+            </div>
+            <!-- Skill 19 -->
+            <div class="flex flex-col justify-center items-center transition-transform transform hover:scale-110">
+                <img src="./images/canva-icon.png" alt="Canva" class="w-12 h-12 md:w-16 md:h-16">
+                <span
+                    class="mt-2 text-xs sm:text-sm md:text-base font-Ovo text-themeText dark:text-darkThemeText">Canva</span>
+            </div>
+            <!-- Skill 20 -->
+            <div class="flex flex-col justify-center items-center transition-transform transform hover:scale-110">
+                <img src="./images/stripe-icon.png" alt="Stripe" class="w-12 h-12 md:w-16 md:h-16">
+                <span
+                    class="mt-2 text-xs sm:text-sm md:text-base font-Ovo text-themeText dark:text-darkThemeText">Stripe</span>
+            </div>
+            <!-- Skill 21 -->
+            <div class="flex flex-col justify-center items-center transition-transform transform hover:scale-110">
+                <img src="./images/algorithm-icon.png" alt="Data Structures and Algorithms"
+                    class="w-12 h-12 md:w-16 md:h-16">
+                <span
+                    class="mt-2 text-xs sm:text-sm md:text-base font-Ovo text-themeText dark:text-darkThemeText text-center">
+                    Data Structures and Algorithms
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <!-- my work -->
+    <div id="work" class="w-full px-[12%] py-10 scroll-mt-20">
+        <h4 class="text-center mb-2 text-lg font-Ovo">My portfolio</h4>
+        <h2 class="text-center text-5xl font-Ovo">My latest work</h2>
+        <p class="text-center max-w-2xl mx-auto mt-5 mb-12 font-Ovo">Welcome to my web development portfolio! Explore a
+            collection of projects showcasing my expertise in web development.</p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 my-10 gap-5 dark:text-black">
+            <!-- Work Item 1 -->
+            <a href="#top" class="block">
+                <div
+                    class="aspect-square bg-white bg-[url('./images/work-1.png')] bg-no-repeat bg-cover bg-center rounded-lg relative group border border-gray-300 dark:border-gray-600 shadow-[0_4px_8px_rgba(0,0,0,0.6)] transition-colors duration-300 overflow-hidden">
+                    <div class="absolute inset-0 bg-black bg-opacity-5"></div>
+                    <div
+                        class="bg-white w-10/12 rounded-md absolute bottom-5 left-1/2 -translate-x-1/2 py-3 px-5 flex items-center justify-between duration-500 group-hover:bottom-7 group-hover:bg-gray-200 dark:bg-black dark:group-hover:bg-gray-700">
+                        <div>
+                            <h2
+                                class="font-semibold text-gray-800 group-hover:text-gray-900 dark:text-gray-300 dark:group-hover:text-gray-300">
+                                Portfolio</h2>
+                            <p
+                                class="text-sm text-gray-600 group-hover:text-gray-800 dark:text-gray-400 dark:group-hover:text-gray-400">
+                                Demo →</p>
+                        </div>
+                        <div
+                            class="border rounded-full border-gray-300 w-9 aspect-square flex items-center justify-center shadow-[2px_2px_0_#000] bg-lime-300 group-hover:bg-lime-300 transition">
+                            <img src="./images/send-icon.png" alt="" class="w-5">
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <!-- Work Item 2 -->
+            <!-- <a href="https://example.com/project-1" class="block">
+                <div
+                    class="aspect-square bg-white bg-[url('./images/work-2.png')] bg-no-repeat bg-cover bg-center rounded-lg relative group border border-gray-300 dark:border-gray-600 shadow-[0_4px_8px_rgba(0,0,0,0.6)] transition-colors duration-300 overflow-hidden">
+                    <div class="absolute inset-0 bg-black bg-opacity-5"></div>
+                    <div
+                        class="bg-white w-10/12 rounded-md absolute bottom-5 left-1/2 -translate-x-1/2 py-3 px-5 flex items-center justify-between duration-500 group-hover:bottom-7 group-hover:bg-gray-200 dark:bg-black dark:group-hover:bg-gray-700">
+                        <div>
+                            <h2
+                                class="font-semibold text-gray-800 group-hover:text-gray-900 dark:text-gray-300 dark:group-hover:text-gray-300">
+                                TuneScape</h2>
+                            <p
+                                class="text-sm text-gray-600 group-hover:text-gray-800 dark:text-gray-400 dark:group-hover:text-gray-400">
+                                Music Streaming Platform</p>
+                        </div>
+                        <div
+                            class="border rounded-full border-gray-300 w-9 aspect-square flex items-center justify-center shadow-[2px_2px_0_#000] bg-lime-300 group-hover:bg-lime-300 transition">
+                            <img src="./images/send-icon.png" alt="" class="w-5">
+                        </div>
+                    </div>
+                </div>
+            </a> -->
+            <!-- Work Item 3 -->
+            <a href="https://chat-app-six-taupe-47.vercel.app/" target="_blank" class="block">
+                <div
+                    class="aspect-square bg-white bg-[url('./images/work-3.png')] bg-no-repeat bg-cover bg-center rounded-lg relative group border border-gray-300 dark:border-gray-600 shadow-[0_4px_8px_rgba(0,0,0,0.6)] transition-colors duration-300 overflow-hidden">
+                    <div class="absolute inset-0 bg-black bg-opacity-5"></div>
+                    <div
+                        class="bg-white w-10/12 rounded-md absolute bottom-5 left-1/2 -translate-x-1/2 py-3 px-5 flex items-center justify-between duration-500 group-hover:bottom-7 group-hover:bg-gray-200 dark:bg-black dark:group-hover:bg-gray-700">
+                        <div>
+                            <h2
+                                class="font-semibold text-gray-800 group-hover:text-gray-900 dark:text-gray-300 dark:group-hover:text-gray-300">
+                                SyncTalk</h2>
+                            <p
+                                class="text-sm text-gray-600 group-hover:text-gray-800 dark:text-gray-400 dark:group-hover:text-gray-400">
+                                Chat App</p>
+                        </div>
+                        <div
+                            class="border rounded-full border-gray-300 w-9 aspect-square flex items-center justify-center shadow-[2px_2px_0_#000] bg-lime-300 group-hover:bg-lime-300 transition">
+                            <img src="./images/send-icon.png" alt="" class="w-5">
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Work Item 4 -->
+            <a href="https://food-del-frontend-mmtf.onrender.com/" target="_blank" class="block">
+                <div
+                    class="aspect-square bg-white bg-[url('./images/work-4.png')] bg-no-repeat bg-cover bg-center rounded-lg relative group border border-gray-300 dark:border-gray-600 shadow-[0_4px_8px_rgba(0,0,0,0.6)] transition-colors duration-300 overflow-hidden">
+                    <div class="absolute inset-0 bg-black bg-opacity-5"></div>
+                    <div
+                        class="bg-white w-10/12 rounded-md absolute bottom-5 left-1/2 -translate-x-1/2 py-3 px-5 flex items-center justify-between duration-500 group-hover:bottom-7 group-hover:bg-gray-200 dark:bg-black dark:group-hover:bg-gray-700">
+                        <div>
+                            <h2
+                                class="font-semibold text-gray-800 group-hover:text-gray-900 dark:text-gray-300 dark:group-hover:text-gray-300">
+                                Yumbite.</h2>
+                            <p
+                                class="text-sm text-gray-600 group-hover:text-gray-800 dark:text-gray-400 dark:group-hover:text-gray-400">
+                                Food Ordering Website</p>
+                        </div>
+                        <div
+                            class="border rounded-full border-gray-300 w-9 aspect-square flex items-center justify-center shadow-[2px_2px_0_#000] bg-lime-300 group-hover:bg-lime-300 transition">
+                            <img src="./images/send-icon.png" alt="" class="w-5">
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Work Item 5 -->
+            <a href="https://example.com/project-4" class="block">
+                <div
+                    class="aspect-square bg-white bg-[url('./images/work-5.png')] bg-no-repeat bg-cover bg-center rounded-lg relative group border border-gray-300 dark:border-gray-600 shadow-[0_4px_8px_rgba(0,0,0,0.6)] transition-colors duration-300 overflow-hidden">
+                    <div class="absolute inset-0 bg-black bg-opacity-5"></div>
+                    <div
+                        class="bg-white w-10/12 rounded-md absolute bottom-5 left-1/2 -translate-x-1/2 py-3 px-5 flex items-center justify-between duration-500 group-hover:bottom-7 group-hover:bg-gray-200 dark:bg-black dark:group-hover:bg-gray-700">
+                        <div>
+                            <h2
+                                class="font-semibold text-gray-800 group-hover:text-gray-900 dark:text-gray-300 dark:group-hover:text-gray-300">
+                                ActiveJourney</h2>
+                            <p
+                                class="text-sm text-gray-600 group-hover:text-gray-800 dark:text-gray-400 dark:group-hover:text-gray-400">
+                                Fitness Tracker</p>
+                        </div>
+                        <div
+                            class="border rounded-full border-gray-300 w-9 aspect-square flex items-center justify-center shadow-[2px_2px_0_#000] bg-lime-300 group-hover:bg-lime-300 transition">
+                            <img src="./images/send-icon.png" alt="" class="w-5">
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Work Item 6 -->
+            <a href="https://github.com/ChiragNebhani/next-blog-app" target="_blank" class="block">
+                <div
+                    class="aspect-square bg-white bg-[url('./images/work-6.png')] bg-no-repeat bg-cover bg-center rounded-lg relative group border border-gray-300 dark:border-gray-600 shadow-[0_4px_8px_rgba(0,0,0,0.6)] transition-colors duration-300 overflow-hidden">
+                    <div class="absolute inset-0 bg-black bg-opacity-5"></div>
+                    <div
+                        class="bg-white w-10/12 rounded-md absolute bottom-5 left-1/2 -translate-x-1/2 py-3 px-5 flex items-center justify-between duration-500 group-hover:bottom-7 group-hover:bg-gray-200 dark:bg-black dark:group-hover:bg-gray-700">
+                        <div>
+                            <h2
+                                class="font-semibold text-gray-800 group-hover:text-gray-900 dark:text-gray-300 dark:group-hover:text-gray-300">
+                                Blogify</h2>
+                            <p
+                                class="text-sm text-gray-600 group-hover:text-gray-800 dark:text-gray-400 dark:group-hover:text-gray-400">
+                                Blog App</p>
+                        </div>
+                        <div
+                            class="border rounded-full border-gray-300 w-9 aspect-square flex items-center justify-center shadow-[2px_2px_0_#000] bg-lime-300 group-hover:bg-lime-300 transition">
+                            <img src="./images/send-icon.png" alt="" class="w-5">
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Work Item 7 -->
+            <a href="https://chiragnebhani.github.io/RockPaperScissors/" target="_blank" class="block">
+                <div
+                    class="aspect-square bg-white bg-[url('./images/work-7.png')] bg-no-repeat bg-cover bg-center rounded-lg relative group border border-gray-300 dark:border-gray-600 shadow-[0_4px_8px_rgba(0,0,0,0.6)] transition-colors duration-300 overflow-hidden">
+                    <div class="absolute inset-0 bg-black bg-opacity-5"></div>
+                    <div
+                        class="bg-white w-10/12 rounded-md absolute bottom-5 left-1/2 -translate-x-1/2 py-3 px-5 flex items-center justify-between duration-500 group-hover:bottom-7 group-hover:bg-gray-200 dark:bg-black dark:group-hover:bg-gray-700">
+                        <div>
+                            <h2
+                                class="font-semibold text-gray-800 group-hover:text-gray-900 dark:text-gray-300 dark:group-hover:text-gray-300">
+                                Rock Paper Scissors</h2>
+                            <p
+                                class="text-sm text-gray-600 group-hover:text-gray-800 dark:text-gray-400 dark:group-hover:text-gray-400">
+                                Play game</p>
+                        </div>
+                        <div
+                            class="border rounded-full border-gray-300 w-9 aspect-square flex items-center justify-center shadow-[2px_2px_0_#000] bg-lime-300 group-hover:bg-lime-300 transition">
+                            <img src="./images/send-icon.png" alt="" class="w-5">
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Work Item 8 -->
+            <a href="https://chiragnebhani.github.io/To-do-List/" target="_blank" class="block">
+                <div
+                    class="aspect-square bg-white bg-[url('./images/work-8.png')] bg-no-repeat bg-cover bg-center rounded-lg relative group border border-gray-300 dark:border-gray-600 shadow-[0_4px_8px_rgba(0,0,0,0.6)] transition-colors duration-300 overflow-hidden">
+                    <div class="absolute inset-0 bg-black bg-opacity-5"></div>
+                    <div
+                        class="bg-white w-10/12 rounded-md absolute bottom-5 left-1/2 -translate-x-1/2 py-3 px-5 flex items-center justify-between duration-500 group-hover:bottom-7 group-hover:bg-gray-200 dark:bg-black dark:group-hover:bg-gray-700">
+                        <div>
+                            <h2
+                                class="font-semibold text-gray-800 group-hover:text-gray-900 dark:text-gray-300 dark:group-hover:text-gray-300">
+                                To-do List</h2>
+                            <p
+                                class="text-sm text-gray-600 group-hover:text-gray-800 dark:text-gray-400 dark:group-hover:text-gray-400">
+                                For daily use</p>
+                        </div>
+                        <div
+                            class="border rounded-full border-gray-300 w-9 aspect-square flex items-center justify-center shadow-[2px_2px_0_#000] bg-lime-300 group-hover:bg-lime-300 transition">
+                            <img src="./images/send-icon.png" alt="" class="w-5">
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Work Item 9 -->
+            <a href="https://weather-app-new-frontend.onrender.com/" target="_blank" class="block">
+                <div
+                    class="aspect-square bg-white bg-[url('./images/work-9.png')] bg-no-repeat bg-cover bg-center rounded-lg relative group border border-gray-300 dark:border-gray-600 shadow-[0_4px_8px_rgba(0,0,0,0.6)] transition-colors duration-300 overflow-hidden">
+                    <div class="absolute inset-0 bg-black bg-opacity-5"></div>
+                    <div
+                        class="bg-white w-10/12 rounded-md absolute bottom-5 left-1/2 -translate-x-1/2 py-3 px-5 flex items-center justify-between duration-500 group-hover:bottom-7 group-hover:bg-gray-200 dark:bg-black dark:group-hover:bg-gray-700">
+                        <div>
+                            <h2
+                                class="font-semibold text-gray-800 group-hover:text-gray-900 dark:text-gray-300 dark:group-hover:text-gray-300">
+                                Weatherly</h2>
+                            <p
+                                class="text-sm text-gray-600 group-hover:text-gray-800 dark:text-gray-400 dark:group-hover:text-gray-400">
+                                Weather App</p>
+                        </div>
+                        <div
+                            class="border rounded-full border-gray-300 w-9 aspect-square flex items-center justify-center shadow-[2px_2px_0_#000] bg-lime-300 group-hover:bg-lime-300 transition">
+                            <img src="./images/send-icon.png" alt="" class="w-5">
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <a href="#"
+            class="w-max flex items-center justify-center gap-2 text-gray-700 border-[0.5px] border-gray-700 rounded-full py-3 px-10 mx-auto my-20 hover:bg-lightHover duration-500 dark:text-white dark:border-white dark:hover:bg-darkHover">Show
+            more <img src="./images/right-arrow-bold.png" alt="" class="w-4 dark:hidden">
+            <img src="./images/right-arrow-bold-dark.png" alt="" class="w-4 hidden dark:block"></a>
+    </div>
+
+
+    <!-- contact -->
+    <div id="contact"
+        class="w-full px-[12%] py-10 scroll-mt-20 bg-[url('./images/footer-bg-color.png')] bg-no-repeat bg-[length:90%_auto] bg-center dark:bg-none">
+        <h4 class="text-center mb-2 text-lg font-Ovo">Connect with me</h4>
+        <h2 class="text-center text-5xl font-Ovo">Get in touch</h2>
+        <p class="text-center max-w-2xl mx-auto mt-5 mb-12 font-Ovo">I'd love to hear from you! If you have any
+            questions,
+            comments or feedback, please use the form below.</p>
+
+        <form method="POST" action="https://api.web3forms.com/submit" class="max-w-2xl mx-auto">
+
+            <input type="hidden" name="access_key" value="4f03188a-d0b5-4069-8f60-5e744ac63171">
+
+            <div class="grid grid-cols-auto gap-6 mt-10 mb-8">
+                <input type="text" placeholder="Enter your name"
+                    class="flex-1 p-3 outline-none border-[0.5px] border-gray-400 rounded-md bg-white dark:bg-darkHover/30 dark:border-white/90"
+                    required name="name">
+                <input type="email" placeholder="Enter your email"
+                    class="flex-1 p-3 outline-none border-[0.5px] border-gray-400 rounded-md bg-white dark:bg-darkHover/30 dark:border-white/90"
+                    required name="email">
+            </div>
+            <textarea rows="6" placeholder="Enter your message"
+                class="w-full p-4 outline-none border-[0.5px] border-gray-400 rounded-md bg-white mb-6 dark:bg-darkHover/30 dark:border-white/90"
+                required name="message"></textarea>
+            <button
+                class="py-3 px-8 w-max flex items-center justify-between gap-2 bg-black/80 text-white rounded-full mx-auto hover:bg-black duration-500 dark:bg-transparent dark:border-[0.5px] dark:hover:bg-darkHover">Submit
+                now
+                <img src="./images/right-arrow-white.png" alt="" class="w-4">
+            </button>
+        </form>
+    </div>
+
+    <!-- footer -->
+    <div class="mt-20">
+        <div class="text-center">
+            <img src="./images/logo.png" alt="" class="w-36 mx-auto mb-2 dark:hidden">
+            <img src="./images/logo-dark.png" alt="" class="w-36 mx-auto mb-2 hidden dark:block">
+            <div class="w-max flex items-center gap-2 mx-auto">
+                <img src="./images/mail_icon.png" alt="" class="w-6 hidden">
+                <img src="./images/mail_icon_dark.png" alt="" class="w-6 hidden dark:block">
+                chiragnebhani.bhl@gmail.com
+            </div>
+        </div>
+        <div class="text-center sm:flex items-center justify-between border-t border-gray-400 mx-[10%] mt-12 py-6">
+            <p>© 2024 Chirag Nebhani. All rights reserved.</p>
+            <ul class="flex items-center gap-10 justify-center mt-4 sm:mt-0">
+                <li class="cursor-pointer"><a href="https://github.com/ChiragNebhani" target="_blank">Github</a></li>
+                <li class="cursor-pointer"><a href="https://www.linkedin.com/in/chirag-nebhani" target="_blank">LinkedIn</a></li>
+                <li class="cursor-pointer"><a
+                        href="https://x.com/i/flow/login?redirect_after_login=%2FChiragNebhani" target="_blank">Twitter</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
